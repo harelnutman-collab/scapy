@@ -23,5 +23,5 @@ def RawFilter(p):
 
 word = ""
 while word != "exit!":
-    p = sniff(count = 1, lfilter = IP_UDP_Filetr, prn = RawFilter)
+    p = sniff(count = 1, lfilter = IP_UDP_Filetr, prn = RawFilter, iface=conf.loopback_name)
     word = p[0][Raw].load.decode()
