@@ -5,7 +5,7 @@ while True:
 
     if not len(msg) != 5:
         packet = IP(dst="10.0.0.8") / UDP(dport=2000) / Raw(load=msg)
-        send(packet)
+        send(packet, verbose=False)
         if msg == "exit!":
             break
     else:
